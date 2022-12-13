@@ -1,3 +1,4 @@
+import 'package:adventofcode/exercices/dayfive.dart';
 import 'package:adventofcode/exercices/dayfour.dart';
 import 'package:adventofcode/exercices/dayone.dart';
 import 'package:adventofcode/exercices/daythree.dart';
@@ -23,8 +24,12 @@ void main(List<String> args) async {
   // print("Result Part One : $dayThreeOne");
   // print("Result Part Two : $dayThreeTwo");
 
-  Map<String, int> dayFour = await getFullyContainsAndOverlaps();
-  print("#--- Day 4 ---#");
-  print("Result Part One : ${dayFour["fullyContains"]}");
-  print("Result Part Two : ${dayFour["overlap"]}");
+  // Map<String, int> dayFour = await getFullyContainsAndOverlaps();
+  // print("#--- Day 4 ---#");
+  // print("Result Part One : ${dayFour["fullyContains"]}");
+  // print("Result Part Two : ${dayFour["overlap"]}");
+
+  print("#--- Day 5 ---#");
+  print("Result Part One : ${await getTopOfStack(isReverse: true)}");
+  print("Result Part Two : ${await getTopOfStack(isReverse: false)}");
 }
