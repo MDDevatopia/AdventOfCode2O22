@@ -5,6 +5,8 @@ import 'package:adventofcode/exercices/daysix.dart';
 import 'package:adventofcode/exercices/daythree.dart';
 import 'package:adventofcode/exercices/daytwo.dart';
 
+import 'exercices/dayseven.dart';
+
 void main(List<String> args) async {
   // List<int> calories = await getCalories();
   // print("#--- Day 1 ---#");
@@ -34,8 +36,24 @@ void main(List<String> args) async {
   // print("Result Part One : ${await getTopOfStack(isReverse: true)}");
   // print("Result Part Two : ${await getTopOfStack(isReverse: false)}");
 
-  print("#--- Day 5 ---#");
-  print("Result Part One : ${await getStartOfPacket()}");
-  print("Result Part Two : ${await getStartOfPacket(distinct: 14)}");
-  
+  // print("#--- Day 6 ---#");
+  // print("Result Part One : ${await getStartOfPacket()}");
+  // print("Result Part Two : ${await getStartOfPacket(distinct: 14)}");
+
+  print("#--- Day 7 ---#");
+  Map<String,int> daySeven = await totalSizeDirectory();
+  int resultOne = 0;
+  int resultTwo = daySeven["/"]!;
+  int needSpace = 30000000 - (70000000 - resultTwo);
+  daySeven.forEach((key, value) { 
+    if(value <= 100000){
+      resultOne += value;
+    }
+    if(value > needSpace && resultTwo > value){
+      resultTwo = value;      
+    }
+  });
+  print("Result Part One : $resultOne");
+  print("Result Part Two : $resultTwo");
 }
+
